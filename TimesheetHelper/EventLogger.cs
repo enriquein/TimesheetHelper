@@ -9,7 +9,8 @@ namespace TimesheetHelper
     public class EventLogger
     {
         private DateTime _lastUpdate;
-        private int _saveDelay = 5;
+        // Delay database writes to avoid having too many entries.
+        private int _saveDelay = 30;
         private GlobalKbHook _kbHook;
 
         public EventLogger(GlobalKbHook kbHook)
@@ -30,6 +31,7 @@ namespace TimesheetHelper
             if (ts.TotalSeconds >= _saveDelay)
             {
                 DbAccess.SaveEvent(new EventInfo(Win32.GetCurrentWindowTitle(), "Keypress"));
+                _lastUpdate = DateTime.Now;
             }
         }
     }

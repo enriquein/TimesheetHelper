@@ -12,6 +12,7 @@ namespace TimesheetHelper
         static void Main()
         {
             var gh = new GlobalKbHook();
+            var logger = new EventLogger(gh);
             gh.Hook();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
