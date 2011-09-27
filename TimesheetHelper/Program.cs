@@ -2,23 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace TimesheetHelper
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            var mon = new EventMonitor();
-            mon.Activate();
+            var gh = new GlobalKbHook();
+            gh.Hook();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TrayIcon());
-            mon.Deactivate();
+            gh.Unhook();
         }
     }
 }
