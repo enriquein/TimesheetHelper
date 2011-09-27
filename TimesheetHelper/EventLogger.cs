@@ -16,9 +16,15 @@ namespace TimesheetHelper
         {
             _lastUpdate = DateTime.Now.AddMinutes(-10);
             _kbHook = kbHook;
+            _kbHook.GlobalKeyDown += new EventHandler<EventArgs>(On_kbHook_GlobalKeyDown);
         }
 
-        public void Log()
+        private void On_kbHook_GlobalKeyDown(object sender, EventArgs e)
+        {
+            Log();
+        }
+
+        private void Log()
         {
             TimeSpan ts = DateTime.Now - _lastUpdate;
             if (ts.TotalSeconds >= _saveDelay)
