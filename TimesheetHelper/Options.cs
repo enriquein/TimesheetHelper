@@ -16,11 +16,5 @@ namespace TimesheetHelper
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Thread.Sleep(5000);
-            MessageBox.Show(Win32.GetCurrentWindowTitle());
-        }
     }
 }
