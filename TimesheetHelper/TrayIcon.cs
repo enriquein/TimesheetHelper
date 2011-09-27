@@ -6,24 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TimesheetHelper.Data;
 
 namespace TimesheetHelper
 {
     public partial class TrayIcon : Form
     {
-        public TrayIcon( /* something that can save the event */ )
+        public TrayIcon()
         {
             InitializeComponent();
-        }
-
-        private void OnGlobalKeyPress(object sender, KeyPressEventArgs e)
-        {
-            /* tell that something that the event happened */
-        }
-
-        private void OnGlobalMouseClick(object sender, MouseEventArgs e)
-        {
-            /* tell that something that the event happened */
         }
     }
 }
