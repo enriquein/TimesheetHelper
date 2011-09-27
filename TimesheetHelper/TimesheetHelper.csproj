@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Data\DbAccess.cs" />
     <Compile Include="Data\EventInfo.cs" />
+    <Compile Include="EventLogger.cs" />
     <Compile Include="GlobalKbHook.cs" />
     <Compile Include="Options.cs">
       <SubType>Form</SubType>
