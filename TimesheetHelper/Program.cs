@@ -13,9 +13,12 @@ namespace TimesheetHelper
         [STAThread]
         static void Main()
         {
+            var mon = new EventMonitor();
+            mon.Activate();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Options());
+            Application.Run(new TrayIcon());
+            mon.Deactivate();
         }
     }
 }
