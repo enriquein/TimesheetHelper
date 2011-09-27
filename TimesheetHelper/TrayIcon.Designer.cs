@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.globalHookProvider = new MouseKeyboardActivityMonitor.Controls.MouseKeyEventProvider();
             this.SuspendLayout();
-            // 
-            // globalHookProvider
-            // 
-            this.globalHookProvider.Enabled = true;
-            this.globalHookProvider.HookType = MouseKeyboardActivityMonitor.Controls.HookType.Global;
-            this.globalHookProvider.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnGlobalMouseClick);
-            this.globalHookProvider.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnGlobalKeyPress);
             // 
             // TrayIcon
             // 
@@ -51,6 +43,5 @@
 
         #endregion
 
-        private MouseKeyboardActivityMonitor.Controls.MouseKeyEventProvider globalHookProvider;
     }
 }
