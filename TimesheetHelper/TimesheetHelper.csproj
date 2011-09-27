@@ -70,8 +70,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbAccess.cs" />
-    <Compile Include="EventInfo.cs" />
+    <Compile Include="Data\DbAccess.cs" />
+    <Compile Include="Data\EventInfo.cs" />
     <Compile Include="Options.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,7 +80,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlMapper.cs" />
+    <Compile Include="Data\SqlMapper.cs" />
     <Compile Include="TrayIcon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,9 +115,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>

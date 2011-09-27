@@ -5,7 +5,7 @@ using System.Text;
 using Dapper;
 using System.Data.SQLite;
 
-namespace TimesheetHelper
+namespace TimesheetHelper.Data
 {
     public class DbAccess
     {
@@ -19,7 +19,7 @@ namespace TimesheetHelper
                                 values (@title, @date, @type);"; 
                 conn.Open();
 
-                conn.Execute(query, new { title = eventInfo.WindowTitle, date = eventInfo.EventDate, type = eventInfo.EventType });
+                conn.Execute(query, new { title = eventInfo.WindowTitle, date = eventInfo.EventDate, type = eventInfo.EventType }, null, null, null);
             }
         }
     }
