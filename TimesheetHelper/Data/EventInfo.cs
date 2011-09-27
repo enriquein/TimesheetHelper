@@ -10,6 +10,16 @@ namespace TimesheetHelper.Data
         public int Id { get; set; }
         public string WindowTitle { get; set; }
         public DateTime EventDate { get; set; }
-        public string EventType { get; set; }
+        public string EventType { get; set; }        
+        
+        public EventInfo(){}
+
+        public EventInfo(string windowTitle, string eventType)
+        {
+            WindowTitle = windowTitle;
+            EventType = eventType;
+        }
+
+
     }
 }
