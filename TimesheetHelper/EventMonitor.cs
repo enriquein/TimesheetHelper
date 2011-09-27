@@ -15,7 +15,7 @@ namespace TimesheetHelper
         private MouseHookListener _mouseListener;
 
         // We want to keep track of this so that we only save once each few seconds or so.
-        private DateTime _lastSave = DateTime.Now.AddMinutes(-1);
+        private DateTime _lastSave = DateTime.MinValue;
         private int _saveDelay = 15; // measured in seconds.
         
         public void Activate()
@@ -27,7 +27,8 @@ namespace TimesheetHelper
             _kbListener.Enabled = true;
 
             _mouseListener.MouseDownExt += MouseListener_MouseDownExt;
-            _kbListener.KeyDown += new KeyEventHandler(KbListener_KeyDown);  
+            _kbListener.KeyDown += new KeyEventHandler(KbListener_KeyDown);
+            _lastSave = DateTime.Now.AddMinutes(-10);
         }
 
         public void Deactivate()
@@ -56,6 +57,7 @@ namespace TimesheetHelper
                     WindowTitle = Win32.GetCurrentWindowTitle(),
                     EventType = eventType
                 });
+                _lastSave = DateTime.Now;
             }
         }
     }
