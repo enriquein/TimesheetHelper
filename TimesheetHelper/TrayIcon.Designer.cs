@@ -42,13 +42,14 @@
             this.trayNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("trayNotifyIcon.Icon")));
             this.trayNotifyIcon.Text = "TimesheetHelper";
             this.trayNotifyIcon.Visible = true;
+            this.trayNotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.On_Tray_Click);
             // 
             // trayMenu
             // 
             this.trayMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.trayMenu.Name = "trayMenu";
-            this.trayMenu.Size = new System.Drawing.Size(153, 48);
+            this.trayMenu.Size = new System.Drawing.Size(93, 26);
             // 
             // exitToolStripMenuItem
             // 
@@ -64,7 +65,9 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Name = "TrayIcon";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrayIcon";
+            this.Load += new System.EventHandler(this.TrayIcon_Load);
             this.trayMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
