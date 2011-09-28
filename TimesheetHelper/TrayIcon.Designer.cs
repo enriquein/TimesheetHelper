@@ -28,7 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrayIcon));
+            this.trayNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.trayMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trayMenu.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // trayNotifyIcon
+            // 
+            this.trayNotifyIcon.ContextMenuStrip = this.trayMenu;
+            this.trayNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("trayNotifyIcon.Icon")));
+            this.trayNotifyIcon.Text = "TimesheetHelper";
+            this.trayNotifyIcon.Visible = true;
+            // 
+            // trayMenu
+            // 
+            this.trayMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.trayMenu.Name = "trayMenu";
+            this.trayMenu.Size = new System.Drawing.Size(153, 48);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // TrayIcon
             // 
@@ -36,12 +63,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Name = "TrayIcon";
+            this.ShowInTaskbar = false;
             this.Text = "TrayIcon";
+            this.trayMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.NotifyIcon trayNotifyIcon;
+        private System.Windows.Forms.ContextMenuStrip trayMenu;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 
     }
 }
